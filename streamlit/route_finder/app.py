@@ -10,8 +10,8 @@ st.title('Route Finder')
 st.markdown('This app uses the [OpenRouteService API](https://openrouteservice.org/) '
   'to geocode and get directions between the specified origin and destination.')
 st.text('Enter any city name or address below.')
-origin = st.text_input('Origin (Example: San Francisco, CA)')
-destination = st.text_input('Destination (Example: San Jose, CA)')
+origin = st.text_input('Origin (Example: Nairobi, Kenya)')
+destination = st.text_input('Destination (Example: Eldoret, Kenya)')
 mode = st.selectbox('Travel Mode', ['Car', 'Walk', 'Bike'])
 button = st.button('Get Directions')
 
@@ -70,7 +70,7 @@ def get_directions(origin_name, destination_name):
     
 
 
-m = folium.Map(location=[39.949610, -75.150282], zoom_start=5)
+m = folium.Map(location=[-0.0236, 37.9062], zoom_start=5)
 if origin:
     origin_coords = geocode(origin)
     folium.Marker(
